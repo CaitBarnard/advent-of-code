@@ -6,3 +6,15 @@ def day01(array)
     return i * val if array.include?(val)
   end
 end
+
+def day01_p2(array)
+  array.each do |i|
+    val = 2020-i
+    array.each do |j|
+      val2 = val - j
+      if array.include?(val2)
+         return i * j * val2
+      end
+    end
+  end
+end

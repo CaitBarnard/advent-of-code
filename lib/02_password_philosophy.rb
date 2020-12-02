@@ -20,3 +20,17 @@ def day02(requirements)
   end
   @count
 end
+
+# part 2
+
+def day02_p2(requirements)
+  requirements.each do |input|
+    @count += 1 if check_valid_p2?(input)
+  end
+  @count
+end
+
+def check_valid_p2?(input)
+  low, high, char, password = parse(input)
+  (password[low-1] + password[high-1]).count(char) == 1 ? true : false
+end
